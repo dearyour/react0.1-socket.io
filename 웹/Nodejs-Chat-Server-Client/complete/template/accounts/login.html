@@ -1,0 +1,38 @@
+{% set title = "로그인" %}
+{% extends "layout/client.html" %}
+ 
+{% block content -%}
+<main class="container join">
+    <form role="form" action="" method="post">
+    <section class="row">
+      <div class="col-xs-12">
+        {% if flashMessage %}
+        <div class="alert alert-danger" role="alert">{{ flashMessage }}</div>
+        {% endif %}
+        <h2 class="a11y-hidden">회원가입</h2>
+        <a href="/auth/facebook" class="btn btn-lg btn-point btn-line btn-block textSecondary">페이스북으로 로그인</a>
+        <span class="divider body2">또는</span>
+        <ul class="join-input-item">
+          <li class="form-group has-feedback">
+            <label class="control-label sr-only" for="inputEmail">이메일</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <input type="text" name="username" class="input-lg form-control" id="inputEmail" aria-describedby="inputEmail" placeholder="이메일을 입력하세요" required>
+            </div>
+          </li>
+
+          <li class="form-group has-feedback">
+            <label class="control-label sr-only" for="inputPassword">비밀번호</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+              <input type="password" name="password" class="input-lg form-control" id="inputPassword" aria-describedby="inputPassword" placeholder="비밀번호를 입력하세요" required>
+            </div>
+          </li>
+          </li>
+        </ul>
+        <button type="submit" class="btn btn-lg btn-main btn-fill btn-block">로그인</button>
+      </div>
+    </section>
+    </form>
+  </main>
+{% endblock %}
